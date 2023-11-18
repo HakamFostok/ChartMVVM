@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xctk="http://schemas.xceed.com/maui/xaml/toolkit"
+             x:Class="MauiApp2.MainPage">
+
+    <xctk:Chart x:Name="MyChart">
+        <xctk:Chart.HorizontalAxis>
+            <xctk:Axis TickLabelType="Text" />
+        </xctk:Chart.HorizontalAxis>
+        <xctk:Chart.Series>
+
+            <!-- This does NOT work -->
+            <xctk:Series DataPointsSource="{Binding Path=Points}">
+            </xctk:Series>
+
+            <!-- This works -->
+            <xctk:Series x:Name="kug">
+                <xctk:Series.DataPoints>
+                    <xctk:DataPoint Text="0" Y="10" />
+                    <xctk:DataPoint Text="1" Y="12" />
+                    <xctk:DataPoint Text="2" Y="15" />
+                    <xctk:DataPoint Text="3" Y="1" />
+                    <xctk:DataPoint Text="4" Y="6" />
+                    <xctk:DataPoint Text="5" Y="30" />
+                    <xctk:DataPoint Text="6" Y="11" />
+                </xctk:Series.DataPoints>
+            </xctk:Series>
+        </xctk:Chart.Series>
+
+    </xctk:Chart>
+
+</ContentPage>
